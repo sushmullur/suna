@@ -154,7 +154,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-gradient-to-b from-blue-100 to-blue-200">
-      <h1 className="text-4xl font-bold mb-8">Suna</h1>
+      <h1 className="text-4xl font-bold mb-8">Start Stretches!</h1>
       <div className="flex flex-col items-center space-y-4">
         <select
           className="px-4 py-2 border border-gray-300 rounded-md"
