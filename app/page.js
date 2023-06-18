@@ -30,11 +30,11 @@ export default function Home() {
               </p>
             </Link>
           </div>
-          <div className="w-full lg:w-1/2 lg:ml-12 mb-8 lg:mb-0">
+          <div className="w-full lg:w-full lg:ml-12 mb-8 lg:mb-0">
             <Image
-              src="/image1.jpeg"
+              src="/image1.png"
               alt="Easy-to-Use Interface"
-              width={200}
+              width={400}
               height={200}
               objectFit="cover"
               className="rounded-lg"
