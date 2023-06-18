@@ -1,34 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Suna - Physical Therapy App
 
-## Getting Started
+Suna is an innovative physical therapy app that leverages AI and computer vision technology to enhance PT training and recovery. The app analyzes exercises performed by patients, tracks their range of motion, and generates intuitive reports to provide valuable insights for physical therapists. This is intended to be a copilot for physical therapists.
 
-First, run the development server:
+## Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- **AI-Powered Exercise Analysis:** Suna utilizes advanced AI algorithms to analyze exercises in real-time, providing insights and feedback to physical therapists.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Range of Motion Tracking:** The app leverages computer vision technology to accurately track and measure patients' range of motion, enabling therapists to monitor progress and tailor treatment plans accordingly.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Intuitive Reporting:** Suna generates comprehensive reports based on patients' range of motion data, allowing therapists to gain deeper insights into their recovery progress and make data-driven decisions.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Frequently Asked Questions
 
-## Learn More
+**How does Suna analyze exercises?**
 
-To learn more about Next.js, take a look at the following resources:
+Suna uses AI algorithms trained on vast amounts of exercise data to recognize and evaluate the movements performed by patients. The algorithms compare the movements to established standards and provide insights on form, technique, and progress.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Is range of motion tracking accurate?**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Yes, Suna's computer vision technology ensures accurate and precise range of motion tracking. The app employs advanced image processing techniques to analyze the patient's movements and provide precise measurements.
 
-## Deploy on Vercel
+**Can Suna be used for remote patient monitoring?**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Absolutely! Suna supports remote patient monitoring, allowing physical therapists to monitor their patients' exercises and progress from anywhere. The app enables seamless communication and collaboration between therapists and patients.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Support
+
+For any further inquiries or assistance, please reach out to our support team at sushm28@uw.edu.
