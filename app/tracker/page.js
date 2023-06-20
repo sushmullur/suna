@@ -1,11 +1,9 @@
 "use client";
-
 import { useEffect, useRef, useState } from 'react';
 import * as poseDetection from '@tensorflow-models/pose-detection';
 import * as tf from '@tensorflow/tfjs';
 
 let detector = null;
-
 
 export default function Home() {
   const videoRef = useRef(null);
@@ -43,15 +41,12 @@ export default function Home() {
   async function startCapturing() {
     console.log("startCapturing called");
     setIsCapturing(true);
-  
 
     let rangeOfMotionResponse = await fetch('http://localhost:8000/rangeOfMotion');
     const rangeOfMotion = await rangeOfMotionResponse.json();
 
-    
     setTimeout(() => {
       setIsCapturing(false)
-
       setRangeOfMotion({ x: rangeOfMotion.rangeOfMotion, y: rangeOfMotion.rangeOfMotion });
     }, 15000); // Stop capturing after 15 seconds
   }
@@ -110,23 +105,56 @@ export default function Home() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-4xl font-bold">Suna</h1>
-      <select onChange={(event) => setSelectedBodyPart(event.target.value)} value={selectedBodyPart}>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-gradient-to-b from-blue-100 to-blue-200">
+      <h1 className="text-6xl font-bold mb-8">Start Stretching!</h1>
+      <select
+        className="mb-4"
+        onChange={(event) => setSelectedBodyPart(event.target.value)}
+        value={selectedBodyPart}
+      >
         {bodyParts.map((bodyPart) => (
           <option key={bodyPart} value={bodyPart}>{bodyPart}</option>
         ))}
       </select>
-      <button onClick={startCapturing}>{isCapturing ? '⏺ Capturing...' : 'Start Capturing'}</button>
-      <div style={{ position: 'relative', width: '640px', height: '480px' }}>
-        <video ref={videoRef} autoPlay playsInline muted id="video" width="640" height="480" style={{ position: 'absolute', display: 'block' }} />
+      <button
+        className={`bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ${isCapturing ? 'cursor-not-allowed opacity-50' : ''}`}
+        onClick={startCapturing}
+        disabled={isCapturing}
+      >
+        {isCapturing ? '⏺ Capturing...' : 'Start Capturing'}
+      </button>
+      <div style={{ position: 'relative', width: '640px', height: '480px' }} className="mt-8">
+        <video
+          ref={videoRef}
+          autoPlay
+          playsInline
+          muted
+          id="video"
+          width="640"
+          height="480"
+          style={{
+            position: 'absolute',
+            display: 'block',
+            borderRadius: '16px', // Rounded corners
+            border: '4px solid #000000', // Border color and width
+          }}
+        />
         <canvas ref={canvasRef} width="640" height="480" style={{ position: 'absolute' }} />
       </div>
-      <div className="mt-4">
+      <div className="mt-8">
         <h2 className="text-2xl font-bold">Range of Motion ({selectedBodyPart.replace('_', ' ')}):</h2>
-        <p>X-axis: {rangeOfMotion.x}</p>
-        <p>Y-axis: {rangeOfMotion.y}</p>
+        <div className="flex flex-col items-center">
+          <p className="text-lg">
+            <span className="font-semibold">X-axis:</span> {rangeOfMotion.x}
+          </p>
+          <p className="text-lg">
+            <span className="font-semibold">Y-axis:</span> {rangeOfMotion.y}
+          </p>
+        </div>
       </div>
+      <footer className="py-8 text-center text-gray-500 text-sm">
+        &copy; 2023 Suna. All rights reserved.
+      </footer>
     </main>
   );
 }
